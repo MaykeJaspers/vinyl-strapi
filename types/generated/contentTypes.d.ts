@@ -369,7 +369,7 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
-<<<<<<< HEAD
+
 export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
   collectionName: 'articles';
   info: {
@@ -960,10 +960,8 @@ export interface PluginUsersPermissionsUser
   };
   options: {
     draftAndPublish: false;
-<<<<<<< HEAD
-=======
     timestamps: true;
->>>>>>> 5ac668b8f0c998fc970f4da36f47201059bbbd17
+
   };
   attributes: {
     blocked: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
@@ -1004,10 +1002,9 @@ export interface PluginUsersPermissionsUser
       Schema.Attribute.SetMinMaxLength<{
         minLength: 3;
       }>;
-<<<<<<< HEAD
+
     vinyls: Schema.Attribute.Relation<'oneToMany', 'api::vinyl.vinyl'>;
-=======
->>>>>>> 5ac668b8f0c998fc970f4da36f47201059bbbd17
+
   };
 }
 
@@ -1021,13 +1018,12 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
-<<<<<<< HEAD
+
       'api::article.article': ApiArticleArticle;
       'api::genre.genre': ApiGenreGenre;
       'api::special-releases.special-releases': ApiSpecialReleasesSpecialReleases;
       'api::vinyl.vinyl': ApiVinylVinyl;
-=======
->>>>>>> 5ac668b8f0c998fc970f4da36f47201059bbbd17
+
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
