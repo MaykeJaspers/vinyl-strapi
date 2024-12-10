@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "special_release",
+  "info": {
+    "singularName": "special-releases",
+    "pluralName": "special-release",
+    "displayName": "Special_Releases",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "vinyls": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::vinyl.vinyl"
+    },
+    "Cover_Image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

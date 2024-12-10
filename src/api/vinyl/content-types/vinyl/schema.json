@@ -1,0 +1,74 @@
+{
+  "kind": "collectionType",
+  "collectionName": "vinyls",
+  "info": {
+    "singularName": "vinyl",
+    "pluralName": "vinyls",
+    "displayName": "Vinyl",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true
+    },
+    "Artist": {
+      "type": "string",
+      "required": true
+    },
+    "Release_Year": {
+      "required": true,
+      "type": "biginteger"
+    },
+    "Cover_Image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Description": {
+      "type": "blocks"
+    },
+    "Tracklist": {
+      "type": "json"
+    },
+    "Special_Release": {
+      "type": "boolean",
+      "default": false
+    },
+    "Price": {
+      "type": "decimal"
+    },
+    "Slug": {
+      "type": "string",
+      "unique": true
+    },
+    "Genre": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::genre.genre",
+      "inversedBy": "vinyls"
+    },
+    "vinyls": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::vinyl.vinyl",
+      "inversedBy": "Related_Vinyls"
+    },
+    "Related_Vinyls": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::vinyl.vinyl",
+      "mappedBy": "vinyls"
+    }
+  }
+}
